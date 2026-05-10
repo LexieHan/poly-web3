@@ -76,7 +76,7 @@ class BaseWeb3Service:
         self.rpc_url = rpc_url or RPC_URL
         self.api_client = PolymarketAPIClient(rpc_url=self.rpc_url)
         self.w3: Web3 = Web3(Web3.HTTPProvider(self.rpc_url))
-        if self.wallet_type == WalletType.PROXY and relayer_client is None:
+        if self.wallet_type in (WalletType.PROXY, WalletType.DEPOSIT_WALLET) and relayer_client is None:
             raise Exception("relayer_client must be provided")
 
     def _resolve_user_address(self):

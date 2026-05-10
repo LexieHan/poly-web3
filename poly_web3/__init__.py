@@ -20,18 +20,24 @@ from poly_web3.schema import (
     RedeemResult,
     WalletType,
 )
-from poly_web3.web3_service import SafeWeb3Service, EOAWeb3Service, ProxyWeb3Service
+from poly_web3.web3_service import (
+    DepositWalletWeb3Service,
+    EOAWeb3Service,
+    ProxyWeb3Service,
+    SafeWeb3Service,
+)
 
 
 def PolyWeb3Service(
     clob_client: Any,
     relayer_client: RelayClient = None,
     rpc_url: str | None = None,
-) -> Union[SafeWeb3Service, EOAWeb3Service, ProxyWeb3Service]:  # noqa
+) -> Union[SafeWeb3Service, EOAWeb3Service, ProxyWeb3Service, DepositWalletWeb3Service]:  # noqa
     services = {
         WalletType.EOA: EOAWeb3Service,
         WalletType.PROXY: ProxyWeb3Service,
         WalletType.SAFE: SafeWeb3Service,
+        WalletType.DEPOSIT_WALLET: DepositWalletWeb3Service,
     }
 
     wallet_type = WalletType.get_with_code(get_clob_signature_type(clob_client))
