@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.1
+
+- Add `POLY_1271` deposit wallet support and route redeem/split/merge batches through `execute_deposit_wallet_batch`.
+- Raise the minimum `py-builder-relayer-client` dependency to `0.0.2rc1` because earlier releases do not provide the deposit-wallet batch APIs used by this release.
+
 ## 2.0.0
 
 - Migrate CLOB dependency and client compatibility to `py-clob-client-v2`.

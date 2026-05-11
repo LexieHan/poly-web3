@@ -109,7 +109,7 @@ pip install "poly-web3[analysis]"
 ## Dependencies
 
 - `py-clob-client-v2 >= 1.0.0` - Polymarket CLOB v2 client
-- `py-builder-relayer-client >= 0.0.1` - Builder Relayer client
+- `py-builder-relayer-client >= 0.0.2rc1` - Builder Relayer client
 - `web3 >= 7.0.0` - Web3.py library
 - `eth-utils == 5.3.1` - Ethereum utilities library
 
